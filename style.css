@@ -1,0 +1,27 @@
+html {
+   text-align: center; 
+}
+img {
+    max-width: 80%;
+}
+#reservations{
+    display: flex;
+}
+.makeReservation{
+    flex-basis: 50%;
+
+}
+.existingReservation{
+    flex-basis: 50%;
+
+}
+
+#reviews{
+    display:flex;
+}
+.photo{
+    flex-basis:50%;
+}
+.review{
+    flex-basis:50%;
+}
