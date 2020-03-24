@@ -8,36 +8,47 @@
 <body>
     <img src="Img/toms-restaurant.jpg" alt="restaurant photo">
     <h1>Reservations</h1>
-    <div id=reservations>
+    <div id="reservations">
         <div class =makeReservation>
             <h1>Make a Reservation</h1>
-            <form>
-                <input type="text" placeholder="Insert your name">
-                <input type="date" placeholder="Insert the date">
+            <form id="makeReservation">
+                <input id="name" type="text" placeholder="Insert your name">
+                <input id="reservationDay" type="date" placeholder="Insert the date">
                 <button>Confirm Reservation</button>
             </form>
         </div>
-        <div class=existingReservation>
-        <h1>Existing Reservations</h1>
-        <table>
-            <thead>
-            <th>Name</th>
-            <th>Day</th>
-            </thead>
-            <tbody></tbody>
+        <div class="existingReservation">
+            <h1>Existing Reservations</h1>
+            <script id="reservation-template" type="text/x-handlebars-template"></script>
+            <table data-id="{{reservationId}}">
+            <th>
+                <tr>name</tr>
+            </th>
+            <th>
+                <tr>date</tr>
+            </th>
+            <tbody>
+            <tr>{{name}}</tr>
+            <tr>{{date}}</tr>
+            </tbody>
             </table>
+            </script>
         </div>
     </div>
 
     <h1>Come Dine with Us</h1>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.024603099547!2d-73.96763018507693!3d40.80545313983082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ4JzE5LjYiTiA3M8KwNTcnNTUuNiJX!5e0!3m2!1sen!2suk!4v1584471681974!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     <h1>Customer Reviews</h1>
-    <div id=reviews>
+    <div id="reviews">
         <div class = photo>
             <img src="Img/jerry.jpg" alt="customer">
         </div>
-        <div class=review>
+        <div class="review">
             <span>“Big lettuce, big carrots, tomatoes like volleyballs.”— Jerry Seinfeld, on The BIG Salad </span>
         </div>
     </div>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="jquery-3.0.0.js"></script>
+<script src="handlebars-v4.0.5.js"></script>
+<script src="main.js"></script>
 </body>
