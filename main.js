@@ -24,21 +24,22 @@ $("#makeReservation").on("submit",function(e){
     });
 
 function getReservations(){
-    database.ref("reservationData").on("value",function(results){
-        var allReservations = results.val();
-        var reservation = [];
+    database.ref("reservationData").on("value",function(results){  
         for (var item in allReservations) {
+            var allReservations = results.val();
+            var reservation = [];
             var context = {
               name: allReservations[item].name,
               date: allReservations[item].date,
               reservationId: item
-            };
-        var source = $("#reservation-template").html();
-        var template = Handlebars.compile(source);
-        var reservationTableElement = template(context);
-        reservation.push(reservationTableElement);   
+            }
+            var source = $("#reservation-template").html();
+            var template = Handlebars.compile(source);
+            var reservationTableElement = template(context);
+            reservation.push(reservationTableElement);
+            $(".existingReservation").append(reservation); 
+        }  
     }
-    $("#existingReservation").append(reservation);
-})}
+)}
 
 getReservations();
